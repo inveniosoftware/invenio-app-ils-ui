@@ -83,17 +83,17 @@ export class ItemListEntry extends Component {
                     truncateLines={1}
                   />
                 </Header>
-                <List>
+                <List className="metadata-sharp">
                   <List.Item>
                     <List.Content>
-                      {item.metadata.internal_location.location.name} -{' '}
-                      {item.metadata.internal_location.name}
+                      <strong>{item.metadata.internal_location.location.name} -{' '}
+                      {item.metadata.internal_location.name}</strong>
                     </List.Content>
                   </List.Item>
                   <List.Item>
                     <List.Content>
                       {' '}
-                      shelf <strong>{item.metadata.shelf}</strong>
+                      <strong>shelf {item.metadata.shelf}</strong>
                     </List.Content>
                   </List.Item>
                 </List>

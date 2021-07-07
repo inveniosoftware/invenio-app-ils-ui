@@ -32,6 +32,10 @@ List Overrides - REACT-INVENIO-APP-ILS
     padding: 0.5em;
   }
 
+  &.metadata-sharp{
+    color: #000000;
+  }
+
   &.horizontal {
     &.document-authors-list,
     &.document-languages-list {
@@ -75,6 +79,8 @@ List Overrides - REACT-INVENIO-APP-ILS
     }
   }
 }
+
+
 
 /* FRONTSITE */
 @{fs-parent-selector} {
