@@ -80,7 +80,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "formik": "^2.2.6",
-    "json": "^9.0.6",
+    "json": "^10.0.0",
     "less": "^3.13.1",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.5.0",
