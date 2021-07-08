@@ -23,6 +23,7 @@ export default class ItemsSearch extends Component {
     return (
       <>
         <SearchBarILS
+          autoFocus
           onSearchHandler={this.executeCheckinAndClearInput}
           placeholder="Scan physical copy barcode to check-in..."
           ref={this.searchBarRef}
