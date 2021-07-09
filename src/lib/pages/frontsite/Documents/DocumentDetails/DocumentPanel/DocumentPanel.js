@@ -51,7 +51,7 @@ class DocumentPanel extends Component {
                     </Overridable>
 
                     <ILSParagraphPlaceholder
-                      linesNumber={1}
+                      linesNumber={2}
                       isLoading={isLoading}
                     >
                       <DocumentAuthors
@@ -65,12 +65,19 @@ class DocumentPanel extends Component {
                         id="DocumentPanel.AfterAuthors"
                         metadata={doc.metadata}
                       />
+                      {doc.metadata.imprint?.publisher
+                        &&
+                      <><div
+                        className={`default-margin-bottom`}>
+                        Published by <b>{doc.metadata.imprint?.publisher}</b>
+                        {doc.metadata.publication_year && (<b>{doc.metadata.publication_year}</b>)}
+                      </div></>}
                     </ILSParagraphPlaceholder>
                     <ILSParagraphPlaceholder
-                      linesNumber={20}
+                      linesNumber={15}
                       isLoading={isLoading}
                     >
-                      <ShowMoreContent lines={20}>
+                      <ShowMoreContent lines={15}>
                         {doc.metadata.abstract}
                       </ShowMoreContent>
                     </ILSParagraphPlaceholder>

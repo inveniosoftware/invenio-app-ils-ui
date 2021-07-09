@@ -38,7 +38,7 @@ class DocumentPanelMobile extends Component {
                 <ILSHeaderPlaceholder isLoading={isLoading} center="true">
                   <DocumentTitle metadata={doc.metadata} />
                 </ILSHeaderPlaceholder>
-                <ILSParagraphPlaceholder linesNumber={1} isLoading={isLoading}>
+                <ILSParagraphPlaceholder linesNumber={2} isLoading={isLoading}>
                   <DocumentAuthors
                     authors={doc.metadata.authors}
                     hasOtherAuthors={doc.metadata.other_authors}
@@ -50,6 +50,13 @@ class DocumentPanelMobile extends Component {
                     id="DocumentPanelMobile.AfterAuthors"
                     metadata={doc.metadata}
                   />
+                  {doc.metadata.imprint?.publisher
+                    &&
+                  <><div
+                    className={`default-margin-bottom`}>
+                    Published by <b>{doc.metadata.imprint?.publisher}</b>
+                    {doc.metadata.publication_year && (<b>{doc.metadata.publication_year}</b>)}
+                  </div></>}
                 </ILSParagraphPlaceholder>
                 <ILSParagraphPlaceholder linesNumber={1} isLoading={isLoading}>
                   <LiteratureTags tags={doc.metadata.tags} />
