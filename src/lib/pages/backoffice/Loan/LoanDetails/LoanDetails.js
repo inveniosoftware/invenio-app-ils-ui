@@ -5,6 +5,7 @@ import { Loader } from '@components/Loader';
 import { Error } from '@components/Error';
 import { CurrentItem } from './CurrentItem';
 import { LoanHeader } from './LoanHeader';
+import { LoanOverbooked } from './LoanOverbooked';
 import { Loan } from './Loan';
 import { AvailableItems } from './AvailableItems';
 import { LoanActionMenu } from './LoanActionMenu';
@@ -18,7 +19,7 @@ export default class LoanDetails extends Component {
 
   componentDidMount() {
     const { fetchLoanDetails, match } = this.props;
-    fetchLoanDetails(match.params.loanPid, true);
+    fetchLoanDetails(match.params.loanPid, true)
   }
 
   componentDidUpdate(prevProps) {
@@ -54,6 +55,7 @@ export default class LoanDetails extends Component {
                     <Grid.Column width={13}>
                       <Container className="spaced">
                         <Container className="spaced">
+                          {data.metadata?.document_pid && <LoanOverbooked documentPid={data.metadata?.document_pid} />}
                           <Loan />
                           <CurrentItem />
                           <AvailableItems
