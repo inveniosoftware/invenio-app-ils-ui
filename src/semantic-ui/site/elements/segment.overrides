@@ -66,3 +66,8 @@ Segment Overrides - REACT-INVENIO-APP-ILS
   background: @loaderDimmerColor;
 }
 
+/* backoffice */
+.warning-box {
+  background-color: #FFFFCC !important;
+  color: #333300;
+}
